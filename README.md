@@ -1,24 +1,13 @@
-# lab1
+# Laboratory work #1
 
-## Project setup
-```
-npm install
-```
+## Setup
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. Pull the project.
+2. Run `npm install` to install the necessary packages.
+3. Run `npm run serve`, which compiles and supports hot-reloads for development purposes.
+4. **OR**, run `npm run build`, which compiles and minifies for production.
+5. Also, run `npm run lint` for linting and fixing files.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Customize configuration
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
