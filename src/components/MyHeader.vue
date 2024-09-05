@@ -19,8 +19,8 @@
 
 		<div class="feature-list">
 			<ul class="link-list">
-				<li v-for="(l, i) in links" :key="l?.id || i" class="link">
-					<a :href="l?.url">{{ l?.name }}</a>
+				<li v-for="(l, i) in links" :key="l.id || i" class="link">
+					<a :href="l?.url" target="_blank">{{ l?.name }}</a>
 				</li>
 			</ul>
 
@@ -59,7 +59,27 @@
 	}
 
 	.link {
+		position: relative;
 		font-size: 0.9rem;
 		font-weight: 600;
+	}
+
+	.link::after {
+		content: '';
+		width: 0%;
+		height: 1px;
+		position: absolute;
+		left: 50%;
+		right: 50%;
+		bottom: 0;
+		transform: translateY(0.2rem);
+		background-color: #000;
+		transition: all 0.1s ease;
+	}
+
+	.link:hover::after {
+		width: 100%;
+		left: 0;
+		right: 0;
 	}
 </style>

@@ -1,15 +1,20 @@
 <template>
 	<div id="app">
-		<MyHeader />
+		<div class="my-header-wrapper">
+			<MyHeader />
+		</div>
+
+		<NewsSection />
 	</div>
 </template>
 
 <script>
 	import MyHeader from './components/MyHeader.vue';
+	import NewsSection from './components/NewsSection.vue';
 
 	export default {
 		name: 'App',
-		components: { MyHeader },
+		components: { MyHeader, NewsSection },
 	};
 </script>
 
@@ -28,5 +33,9 @@
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+
+	.my-header-wrapper {
+		margin-block-end: 4rem;
 	}
 </style>
