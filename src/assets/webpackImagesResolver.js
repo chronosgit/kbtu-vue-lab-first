@@ -1,8 +1,6 @@
 const importAll = (r) => {
 	let images = {};
 
-	console.log(r);
-
 	r.keys().map((item) => {
 		images[item.replace('./', '')] = r(item);
 	});
