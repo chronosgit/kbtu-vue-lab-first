@@ -1,4 +1,7 @@
 <script>
+	// eslint-disable-next-line no-unused-vars
+
+	import images from '@/assets/webpackImagesResolver';
 	import labelsColorDictionary from '@/utils/labelsColorDictionary';
 
 	export default {
@@ -16,8 +19,9 @@
 				};
 			},
 			bgImgSrc() {
-				// handicap approach, dunno how to resolve dynamic paths in webpack yet
-				return require('/src/assets/image_404.jpg');
+				if (!this?.card.image) return require('/src/assets/image_404.jpg');
+
+				return images[this.card.image] || '';
 			},
 		},
 		methods: {
