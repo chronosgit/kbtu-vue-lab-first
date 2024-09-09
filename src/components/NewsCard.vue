@@ -15,10 +15,14 @@
 					gridRow: this.isVertical ? 'span 2' : '',
 				};
 			},
+			bgImgSrc() {
+				// handicap approach, dunno how to resolve dynamic paths in webpack yet
+				return require('/src/assets/image_404.jpg');
+			},
 		},
 		methods: {
 			getLabelColor(label) {
-				return labelsColorDictionary[label] || 'gray'; // gray???
+				return labelsColorDictionary[label] || 'gray';
 			},
 		},
 	};
@@ -26,6 +30,8 @@
 
 <template>
 	<div class="card-box" :style="cardConditionalStyle">
+		<img :src="bgImgSrc" alt="" class="bg-img" />
+
 		<div class="card-content">
 			<div v-if="card?.labels.length > 0" class="card-labels">
 				<div
@@ -49,6 +55,8 @@
 
 <style scoped>
 	.card-box {
+		position: relative;
+		overflow: hidden;
 		min-height: 12rem;
 		padding: 1rem;
 
@@ -56,10 +64,22 @@
 		flex-direction: column;
 		justify-content: flex-end;
 
-		background-color: #8b8b8b;
 		border-radius: 0.3rem;
 		box-shadow: inset 0rem -3rem 3rem rgb(70, 70, 70);
 		cursor: pointer;
+	}
+
+	.bg-img {
+		position: absolute;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		object-fit: cover;
+		z-index: -1;
 	}
 
 	.card-labels {
