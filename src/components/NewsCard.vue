@@ -69,12 +69,11 @@
 		justify-content: flex-end;
 
 		border-radius: 0.3rem;
-		box-shadow: inset 0rem -3rem 3rem rgb(70, 70, 70);
+		background: linear-gradient(rgba(240, 240, 240, 0.067), rgb(1, 1, 1));
 		cursor: pointer;
 	}
 
 	.bg-img {
-		position: absolute;
 		position: absolute;
 		width: 100%;
 		height: 100%;
